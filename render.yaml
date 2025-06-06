@@ -2,6 +2,7 @@ services:
   - type: web
     name: ssfp-webhook
     env: python
-    buildCommand: ""
-    startCommand: Medi. main:app
+    buildCommand: "cd Medi && pip install -r requirements.txt"
+    startCommand: "gunicorn main:app"
     plan: free
+    rootDir: Medi
